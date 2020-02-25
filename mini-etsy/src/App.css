@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
 }
 
 .App-logo {
@@ -13,26 +16,202 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+* {
+  font-family: 'Indie Flower', sans-serif ;
+  /* font-family: 'Indie Flower', ;
+  font-family: 'Shadows Into Light', ; */
+}
+
+.header{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: lavender;
+}
+
+h1{
+  font-size: 60px;
+  margin: 0px;
+  text-align: left;
+  margin: 20px 40px;
+}
+
+.home{
+  width:100%;
+  text-align: center;
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.intro{
+  width: 80%;
+  text-align: left;
+}
+.homePic{
+  width: 80%;
+  height: 80%;
+  margin: 0px;
+}
+
+h2{
+  font-size: 40px;
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 20px;
+  margin: 0px 50px 20px 0px;
+}
+
+.navlink{
+  margin: 0px 10px;
+}
+
+
+body{
+  margin: 0px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main{
+  text-align: center;
+  width: 90%;
+}
+
+.browseHeader{
+  text-align:center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 30px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.browseHeader *{
+  margin: 0px 0px 15px 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filters{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%;
+  margin: 0px;
 }
+
+.keySearch{
+  width: 40%;
+}
+
+input {
+  width: 60%;
+  border: 2px solid rgba(225, 255, 159,0.01); 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 5px;
+  background: rgba(225, 255, 159,0.3);
+}
+
+button{
+  border: 2px solid rgba(189, 159, 255, 0.01); 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 5px;
+  background: rgba(189, 159, 255,0.3);
+
+}
+
+select{
+  width: 100px;
+  border: 2px solid rgba(189, 159, 255, 0.01); 
+  -webkit-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  -moz-box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 5px;
+  background: rgba(189, 159, 255,0.3);
+}
+
+
+.dashboard{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  object-fit: contain;
+  margin: 30px 0px;
+  width: 100%;
+}
+
+
+.productCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32.6%;
+  height: 300px;
+  margin: 0px;
+  text-align: center;
+}
+
+
+.thumbnail{
+  width: 40%;
+  height:60%;
+  object-fit: cover;
+}
+
+.productDetail{
+  display:flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 30px 0px;
+}
+
+.largePic{
+  width: 40%;
+  height: 40%;
+  margin: 0px 50px 100px 100px;
+}
+
+.productText{
+  display: flex;
+  flex-direction: column;
+  margin: 0px 100px 100px 50px;
+  text-align: left;
+}
+
+.productText * {
+  margin: 0px 0px 20px 0px;
+}
+
+
