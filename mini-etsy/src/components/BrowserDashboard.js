@@ -8,13 +8,14 @@ function BrowserDashboard(props) {
   if (props.data !== '') {
     const { data } = props.data
     listings = data.results;
-    console.log(`listings`, listings)
+    console.log(`Browser listings`, listings)
   }
   else {
-    console.log(`data not loaded yet`)
+    return (
+      <h3>Welcome to my vintage playground. Choose one of my favorite shops above to get started.</h3>
+    )
   }
 
-  
   const productCard = listings.map((listing, index) => {
     return (
 

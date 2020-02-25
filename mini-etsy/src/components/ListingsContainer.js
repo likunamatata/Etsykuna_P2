@@ -24,8 +24,14 @@ class ListingsContainer extends Component {
 
   handleChange = async (event) => {
     SHOP_ID = event.target.value;
-    const allData = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=100&&api_key=` + API_KEY)
-    console.log(`ListingContainer`, allData)
+    const allData = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData1 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData2 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData3 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData4 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData5 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    // const allData6 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
+    console.log(`Container listings`, allData)
     this.setState({
       allData: allData
     })
@@ -60,16 +66,8 @@ class ListingsContainer extends Component {
           <BrowserDashboard data={this.state.allData} />
         </Route>
 
-
-        <Route path={"/Browse/:listing_id"}
-          render={props =>
-            <ProductDetail
-              data={this.state.allData}
-              listingId={props.match.params.listing_id}
-            />
-          }
-        />
       </div>
+
     )
   }
 }
