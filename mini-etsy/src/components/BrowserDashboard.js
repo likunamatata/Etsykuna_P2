@@ -5,10 +5,11 @@ function BrowserDashboard(props) {
 
   let listings = [];
 
+
   if (props.data !== '') {
-    const { data } = props.data
-    listings = data.results;
-    console.log(`Browser listings`, listings)
+    const { data } = props;
+    listings = data;
+
   }
   else {
     return (

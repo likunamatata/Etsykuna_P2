@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Home from './Home.js';
 import BrowserDashboard from './BrowserDashboard.js';
-import ProductDetail from './ProductDetail.js';
-import Notes from './Notes.js';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
+import categories from '../data/categories.js';
+
 let SHOP_ID = '';
-const BASE_URL = `https://openapi.etsy.com/v2/shops/${SHOP_ID}listings/active?includes=MainImage&&api_key=`;
-const API_KEY = process.env.REACT_APP_API_KEY;
+const BASE_URL = `https://openapi.etsy.com/v2/shops/`;
+const LISTINGS_ENDPOINT = `/listings/active?includes=MainImage&&`;
+const API_KEY = `&&api_key=${process.env.REACT_APP_API_KEY}`;
 const CORS = `https://cors-anywhere.herokuapp.com/`;
+
 // const IEX_TOKEN = process.env.REACT_APP_IEX_TOKEN
 
 
@@ -16,28 +17,48 @@ class ListingsContainer extends Component {
   constructor() {
     super();
     this.state = {
-      allData: '',
-      sections: []
+      allData: [],
+      category: ''
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = async (event) => {
     SHOP_ID = event.target.value;
-    const allData = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData1 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData2 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData3 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData4 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData5 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    // const allData6 = await axios.get(CORS + `https://openapi.etsy.com/v2/shops/${SHOP_ID}/listings/active?includes=MainImage&&limit=50&offset=0&&api_key=` + API_KEY)
-    console.log(`Container listings`, allData)
+
+    //Etsy API maxes out at 100 objects, but there's a multiple request workaround if you want to get more data
+    const allData1 = await axios.get(CORS + `${BASE_URL}${SHOP_ID}${LISTINGS_ENDPOINT}limit=100&offset=0${API_KEY}`)
+    const allData2 = await axios.get(CORS + `${BASE_URL}${SHOP_ID}${LISTINGS_ENDPOINT}limit=100&offset=100${API_KEY}`)
+    const allData3 = await axios.get(CORS + `${BASE_URL}${SHOP_ID}${LISTINGS_ENDPOINT}limit=100&offset=200${API_KEY}`)
+
+    //turning them into arrays to concatanate easily
+    const results1 = allData1 !== '' ? allData1.data.results : ''
+    const results2 = allData1 !== '' ? allData2.data.results : ''
+    const results3 = allData1 !== '' ? allData3.data.results : ''
+
     this.setState({
-      allData: allData
+      allData: [...results1, ...results2, ...results3]
+    })
+  }
+
+  //need to figure out a way to filter allData with the outcome of my handleFilter in category
+
+  handleFilter = (event) => {
+    console.log(`before`, this.state.allData)
+    this.setState({
+      [event.target.name]: event.target.value,
+      allData: this.state.allData.filter( data => data.category_id !== this.state.category)
     })
   }
 
   render() {
+    const categoriesData = categories.results;
+    const categoryOptions = categoriesData.map((category, index) => {
+      return (
+        <option key={index} value={category.category_id} >{category.long_name}</option>
+      )
+    })
+
     return (
       <div className='container'>
         <div className='browseHeader'>
@@ -49,15 +70,9 @@ class ListingsContainer extends Component {
               <option value='citizenVintageBridal'>Ctz Vtg Bridal</option>
               <option value='PlushArmour'>Plush Armour</option>
             </select>
-            <select>
+            <select name='category' onChange={this.handleFilter}>
               <option>Category</option>
-              <option>Accessories</option>
-              <option>Clothes</option>
-            </select>
-            <select>
-              <option>Price Range</option>
-              <option>Under $25</option>
-              <option>$25 - $100</option>
+              {categoryOptions}
             </select>
           </div>
         </div>

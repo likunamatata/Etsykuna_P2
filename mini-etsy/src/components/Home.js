@@ -5,14 +5,12 @@ function Home() {
   return (
     <div className='home'>
       <div className='intro'>
-      <p>Welcome to Etsykuna!</p>
-      <p>This web app is an attempt at digitizing my favorite part of the vintage shopping experience. 
+      <p>Etsykuna (i.e., Mini Etsy) is an attempt at digitizing my favorite part of the vintage shopping experience. 
         That is, having a select few sellers with limited amout of highly curated products whose taste you have grown to trust
         over a number of successful purchases. 
       </p>
-      <p>Go to the Notes to read about why this approach
-        may be beneficial for both sellers and buyers and 
-        why I think Richard Thaler would agree.
+      <p>Go to the Notes to read about how this is an extension rather than a copy of Etsy's Favorite Shops feature and 
+        why I think Richard Thaler would approve of it.
       </p>
       </div>
       <img src={flowers} alt='home img' className='homePic'/>
