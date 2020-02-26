@@ -5,12 +5,9 @@ function Home() {
   return (
     <div className='home'>
       <div className='intro'>
-      <p>Etsykuna (i.e., Mini Etsy) is an attempt at digitizing my favorite part of the vintage shopping experience. 
-        That is, having a select few sellers with limited amout of highly curated products whose taste you have grown to trust
-        over a number of successful purchases. 
+        <p>Functionally similar to Etsy's Favorite Shops feature, Etsykuna (i.e., Mini Etsy) is an attempt at digitizing the vintage shopping experience using only a subset of the online market's listings.
       </p>
-      <p>Go to the Notes to read about how this is an extension rather than a copy of Etsy's Favorite Shops feature and 
-        why I think Richard Thaler would approve of it.
+      <p>Go to the Notes to read more about the app and why I think Richard Thaler would approve of it.
       </p>
       </div>
       <img src={flowers} alt='home img' className='homePic'/>
