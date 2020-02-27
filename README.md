@@ -5,7 +5,7 @@ This app allows me to create a funky-looking online space where I can browse the
 To quickly check out what the app looks like, you can visit
 
 * MVP: Etsy listings from 5 of my favorite shops
-* Post-MVP: Add pages so only 50 items get loaded each time instead of all 0-300 in one page
+* Post-MVP: Decrease the time it takes for initial load of the API data and add pages so only 50 items get loaded each time instead of all 0-300 in one page
 * Post-Post-MVP: Add a back-end functionality where I can save users' login data and their 5 favorite shops(instead of the current list predetemined by me)
 
 
