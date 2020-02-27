@@ -15,6 +15,6 @@ To quickly check out what the app looks like, you can visit
 * Size of displayed data: Since Etsy only returns max of 100 items per API request, I'm requesting 3 batches of 100-items to load all of my data. Choosing 300 as the maximum number of items for my app is a personal preference of how many product listings I want to browse through at a time. Two of my favorite online shops I AM THAT and Ivia Retro max it out at 100-150 and most organized and curated Etsy vintage sellers don't have more than 300 items at a time in their shop.
 
 
-![]https://media.giphy.com/media/Wn74RUT0vjnoU98Hnt/giphy.gif
+![](https://media.giphy.com/media/Wn74RUT0vjnoU98Hnt/giphy.gif)
 
 
