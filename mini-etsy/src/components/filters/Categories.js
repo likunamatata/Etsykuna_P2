@@ -1,5 +1,5 @@
 import React from 'react';
-import categories from '../data/categories.js';
+import categories from '../../data/categories.js';
 
 function Categories(props) {
   const { handleFilter, show } = props

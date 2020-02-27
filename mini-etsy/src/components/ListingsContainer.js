@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import BrowserDashboard from './BrowserDashboard.js';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
-import Categories from './Categories.js';
-import Shops from './Shops.js';
-import Keywords from './Keywords.js';
+import Categories from './filters/Categories.js';
+import Shops from './filters/Shops.js';
+import Keywords from './filters/Keywords.js';
 
 
 let SHOP_ID = '';

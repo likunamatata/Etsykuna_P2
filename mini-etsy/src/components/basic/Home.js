@@ -1,5 +1,5 @@
 import React from 'react';
-import flowers from './flowerZ.jpg'
+import flowers from '../../data/flowerZ.jpg'
 
 function Home() {
   return (

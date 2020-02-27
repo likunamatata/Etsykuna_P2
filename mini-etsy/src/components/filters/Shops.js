@@ -1,5 +1,5 @@
 import React from 'react';
-import shops from '../data/shops.js';
+import shops from '../../data/shops.js';
 
 function Shops(props) {
   const { handleChange } = props

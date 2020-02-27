@@ -5,19 +5,15 @@ import ListingCard from './ListingCard.js';
 
 class BrowserDashboard extends Component {
   constructor(props) {
-    console.log(`constructor`, props)
     super(props);
     this.state = {
     }
   }
 
   render() {
-    console.log(`render`, this.props)
     const loadStatus = this.props.data == '' && this.props.loaded
-    console.log(loadStatus)
 
     const listings = this.props.data !== '' && this.props.data
-    console.log(`listings`, listings)
     if (loadStatus == true) {
       return (
         <div className='loadingMessage'>

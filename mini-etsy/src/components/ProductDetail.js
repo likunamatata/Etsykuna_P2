@@ -9,7 +9,6 @@ const API_PREFACE = `?includes=MainImage&&api_key=`;
 class ProductDetail extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
     this.state = {
       listingId: props.listingId,
       loaded: false
@@ -34,7 +33,6 @@ class ProductDetail extends Component {
     }
     else {
       listingObject = this.state.listingData.data.results[0]
-      console.log(listingObject)
     }
     return (
       <div className='productDetail'>
