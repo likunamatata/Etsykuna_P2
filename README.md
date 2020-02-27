@@ -1,4 +1,4 @@
-### Etsykuna (aka Mini Etsy)
+# Etsykuna (aka Mini Etsy)
 
 This app allows me to create a funky-looking online space where I can browse the listings of my favorite Etsy vintage sellers in limited quantities (max 300 items at a time). The main goal of the design is to digitize the real life vintage shopping experience. That is, small eclectic space with a small amount of highly curated options that guarantees quick and good purchases and also makes the process of buying enjoyable. Different screens of the web app are intentionally simple to make the product facts and data easily digestible and increase the likelyhood of shopper engagement. Once the user decides to buy an item, there is a link to its actual Etsy listing where the purchase can be processed.
 
