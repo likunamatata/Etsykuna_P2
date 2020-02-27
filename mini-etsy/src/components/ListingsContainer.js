@@ -4,6 +4,8 @@ import { Route } from 'react-router-dom';
 import axios from 'axios';
 import Categories from './Categories.js';
 import Shops from './Shops.js';
+import Keywords from './Keywords.js';
+
 
 let SHOP_ID = '';
 const BASE_URL = `https://openapi.etsy.com/v2/shops/`;
@@ -16,15 +18,24 @@ class ListingsContainer extends Component {
   constructor() {
     super();
     this.state = {
+      allData: [],
       displayedData: [],
-      category: ''
+      category: '',
+      loaded: false
     }
     this.handleChange = this.handleChange.bind(this)
   }
 
   handleChange = async (event) => {
     SHOP_ID = event.target.value;
+    this.setState({
+      loaded: true
+    })
 
+    this.getData(SHOP_ID)
+  }
+
+  getData = async (SHOP_ID) => {
     //Etsy API maxes out at 100 objects, but there's a multiple request workaround if you want to get more data
     const allData1 = await axios.get(CORS + `${BASE_URL}${SHOP_ID}${LISTINGS_ENDPOINT}limit=100&offset=0${API_KEY}`)
     const allData2 = await axios.get(CORS + `${BASE_URL}${SHOP_ID}${LISTINGS_ENDPOINT}limit=100&offset=100${API_KEY}`)
@@ -36,40 +47,60 @@ class ListingsContainer extends Component {
     const results3 = allData1 !== '' ? allData3.data.results : ''
 
     this.setState({
-      displayedData: [...results1, ...results2, ...results3]
+      allData: [...results1, ...results2, ...results3],
+      displayedData: [...results1, ...results2, ...results3],
     })
   }
+
 
   //need to figure out a way to filter displayedData with the outcome of my handleFilter in category
 
   handleFilter = (event) => {
-    console.log(`name`, event.target.name)
-    console.log(`value`, event.target.value)
-    const originalData = this.state.displayedData
-    console.log(`original`, originalData)
-    this.setState({
-      [event.target.name]: event.target.value,
-    })
+    const originalData = this.state.allData
     const filteredData = originalData.filter((listing) => {
-      return listing.tags.includes(this.state.category)
+      return listing.tags.join().includes(event.target.value)
     })
-    console.log( `filtered`, filteredData)
-    // this.setState({
-    //   displayedData: filteredData
-    // })
+    this.setState({
+      displayedData: filteredData
+    })
   }
+
+  handleKey = (event) => {
+    const originalData = this.state.allData
+    const filteredData = originalData.filter((listing) => {
+      return listing.title.includes(event.target.value)
+    })
+    this.setState({
+      displayedData: filteredData
+    })
+  }
+
+
 
   render() {
     return (
       <div className='container' >
         <div className='browseHeader'>
+          <Shops handleChange={this.handleChange} />
+
           <div className='filters'>
-           <Shops handleChange={this.handleChange}/>
-            <Categories handleFilter={this.handleFilter} />
+            <Categories
+              show={this.state.loaded}
+              handleFilter={this.handleFilter}
+            />
+            <Keywords
+              show={this.state.loaded}
+              handleKey={this.handleKey}
+            />
           </div>
+
         </div>
+
         <Route exact path='/Browse'>
-          <BrowserDashboard category={this.state.category} data={this.state.displayedData} />
+          <BrowserDashboard
+            category={this.state.category}
+            data={this.state.displayedData}
+            loaded={this.state.loaded} />
         </Route>
 
       </div >

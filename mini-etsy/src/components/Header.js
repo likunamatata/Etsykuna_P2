@@ -7,8 +7,8 @@ function Header() {
       <h1>Etsykuna</h1>
       <div className='links'>
         <NavLink className='navlink' to='/'>Home</NavLink>
-        <NavLink className='navlink' to='Browse'>Browse</NavLink>
-        <NavLink className='navlink' to='Notes'>Notes</NavLink>
+        <NavLink className='navlink' to='/Browse'>Browse</NavLink>
+        <NavLink className='navlink' to='/Notes'>Notes</NavLink>
       </div>
     </div>
   )

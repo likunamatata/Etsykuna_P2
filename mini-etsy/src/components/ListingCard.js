@@ -13,8 +13,11 @@ function ListingCard(props) {
           className='thumbnail'
           alt='Product Thumbnail'
         />
-        <p>{listing.title}</p>
-        <p>{listing.price}</p>
+        <div className="productSummary">
+          <p className='productText'>{listing.title}</p>
+          <p className='productPrice'>`${listing.price}`</p>
+        </div>
+
       </NavLink>
     )
   })

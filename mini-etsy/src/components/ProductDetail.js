@@ -26,7 +26,10 @@ class ProductDetail extends Component {
     let listingObject = '';
     if (this.state.loaded == false) {
       return (
-        <h1 className='loadingMessage'>Data is loading</h1>
+        <div className='loadingMessage'>
+          <p className='loadingText'>Thank you for your patience while we load the data</p>
+          <iframe src="https://giphy.com/embed/oVtYtD1k0SSDivz4rS" className="loadingImage" allowFullScreen></iframe>
+        </div>
       )
     }
     else {
@@ -37,13 +40,13 @@ class ProductDetail extends Component {
       <div className='productDetail'>
         <img src={listingObject.MainImage.url_fullxfull} className='largePic'
           alt='Product Pic' />
-        <div className='productText'>
-          <h2>{listingObject.title}</h2>
+        <div className='detailText'>
+          <h2 className='detailTitle'>{listingObject.title}</h2>
           <a>{`$${listingObject.price}`}</a>
           <a href={listingObject.url}>
             <button>Buy on Etsy</button>
           </a>
-          <p>{listingObject.description}</p>
+          <p className='detailDescription'>{listingObject.description}</p>
         </div>
       </div>
     )

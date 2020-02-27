@@ -16,8 +16,8 @@ const shops = {
       'shop_id': ''
     },
     {
-      "name": 'PlushArmour',
-      "long_name": "Plush Armour",
+      "name": 'BetterStayTogether',
+      "long_name": "Better Stay Together",
       'shop_id': ''
     }, {
       "name": 'arsenickittyvintage',
