@@ -60,7 +60,7 @@ function Notes() {
           size" and retail space rent (i.e., survival of the chicest both for clothing pieces and for the shops).
           For this reason, the real-deal vintage sellers will usually sell via Instagram DM's or have individual
           websites and I have a feeling there are more important reasons than avoiding the E-market commission.
-          "Portland vintage queens" aka I AM THAT shop and Floridian Ivia Retro are my two online vintagers who
+          "Portland vintage queens" aka I AM THAT shop and Floridian Ivia Retro are two online vintagers who
           have digitized almost all of my favorite parts of the experience:
           </p>
         <ul>
@@ -119,13 +119,12 @@ function Notes() {
           <li><h3>Corporate-style Sales Enablement</h3>
             <p>while decreasing the barrier to entry in the market is amazing,
               having people enter with no or limited means of performing in it is something
-              that can be improved. I think it would be great to support interested Etsy sellers
-              with sales effectiveness frameworks and guides to help position them well in terms
-              of organizing their online spaces, setting prices, and managing inventory. I think
-              even the well-established sellers, like Persephone Vintage, could benefit from it.
-              They have over 150K and 50K followers on Instagram and Etsy respectively, but I've been
-              looking at a few beautiful dresses that still haven't been sold -- maybe it's time to set
-              the price right and let them go (to my closet)?
+              that can be improved if addressed collectively. I think it would be great to support interested Etsy sellers
+              with general and customized sales effectiveness guidelines to help position them well in terms
+              of organizing their online spaces, setting prices, and managing inventory. Even the well-established sellers could benefit from it. 
+              For example, Persephone Vintage has over 150K and 50K followers on Instagram and Etsy respectively, yet somehow I've been
+              looking at a few of their beautiful dresses that still haven't been sold for over a YEAR -- maybe with a little help they can get the prices right
+              and let them go (to my closet)?
             </p></li>
         </ul>
       </div>
