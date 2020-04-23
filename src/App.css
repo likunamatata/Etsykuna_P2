@@ -39,6 +39,10 @@ h1{
   margin: 20px 40px;
 }
 
+a{
+  color: black;
+}
+
 .home{
   width:100%;
   text-align: center;

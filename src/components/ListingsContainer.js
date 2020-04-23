@@ -68,7 +68,8 @@ class ListingsContainer extends Component {
   handleKey = (event) => {
     const originalData = this.state.allData
     const filteredData = originalData.filter((listing) => {
-      return listing.title.includes(event.target.value)
+      let lowerCase = event.target.value.toLowerCase()
+      return listing.title.includes(lowerCase)
     })
     this.setState({
       displayedData: filteredData
